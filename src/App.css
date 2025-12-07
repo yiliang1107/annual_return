@@ -46,7 +46,7 @@
 .invest-row {
   display: grid;
   /* 電腦版預設比例：名目 | 類型 | 金額 | 日期 | 刪除 */
-  grid-template-columns: 1.5fr 0.9fr 1.2fr 1.1fr 0.4fr;
+  grid-template-columns: 1.5fr 0.9fr 1.2fr 1.1fr 0.2fr;
   gap: 8px;
   align-items: center;
 }
@@ -71,6 +71,13 @@
 
 /* === 手機版響應式設定 (螢幕寬度小於 600px) === */
 @media (max-width: 600px) {
+  /* 讓根容器 padding 變小，釋放更多寬度給內容 */
+  #root {
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   /* 手機版隱藏表頭，節省空間 */
   .invest-header {
     display: none;
@@ -84,8 +91,8 @@
       "name date date"     /* 第一行：名目佔 1 欄，日期佔 2 欄 */
       "type amount del";   /* 第二行：類型 | 金額 | 刪除 */
     
-    gap: 10px;             /* 增加間距比較好點 */
-    padding: 12px;
+    gap: 8px;             /* 增加間距比較好點 */
+    padding: 8px;
     background-color: #1e293b; /* 深色背景卡片感 */
     border: 1px solid #334155;
     border-radius: 12px;

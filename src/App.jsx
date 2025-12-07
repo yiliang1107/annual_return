@@ -371,14 +371,15 @@ function App() {
                     display: "inline-flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    width: "32px",
-                    height: "32px",
+                    width: "20px",
+                    height: "20px",
                     borderRadius: "50%",
                     border: "1px solid #ef4444",
                     background: "rgba(239, 68, 68, 0.1)",
                     color: "#ef4444",
                     cursor: "pointer",
                     padding: 0,
+                    fontSize: "12px",
                   }}
                   title="刪除"
                 >
