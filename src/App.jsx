@@ -241,10 +241,10 @@ function App() {
         }}
       >
         <h1 style={{ fontSize: "24px", marginBottom: "4px" }}>
-          年化報酬率（XIRR）試算
+          簡單年化報酬計算
         </h1>
         <p style={{ fontSize: "14px", color: "#9ca3af", marginBottom: "16px" }}>
-          請輸入每一筆資金異動（投入或取回），以及最後的結算價值。
+          輸入每一筆資金異動（投入或取回）和最後的結算價值 by <a href="https://www.youtube.com/@little.warung" target="_blank" rel="noreferrer" style={{ color: "#38bdf8", textDecoration: "none" }}>小販</a>
         </p>
 
         {/* 資金異動區塊 */}
