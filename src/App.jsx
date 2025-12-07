@@ -277,16 +277,8 @@ function App() {
             </button>
           </div>
 
-          {/* 表頭 */}
-          <div style={{ 
-              display: "grid", 
-              gridTemplateColumns: "1.2fr 0.8fr 1fr 1.1fr 0.4fr",
-              gap: "8px", 
-              marginBottom: "4px",
-              paddingLeft: "4px",
-              fontSize: "12px",
-              color: "#6b7280"
-          }}>
+          {/* 表頭 (使用 CSS class 控制手機版隱藏) */}
+          <div className="invest-header">
              <div>名目 (Left OK)</div>
              <div>類型 (Give/Take)</div>
              <div>金額</div>
@@ -295,101 +287,104 @@ function App() {
           </div>
 
           {investItems.map((item) => (
-            <div
-              key={item.id}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1.2fr 0.8fr 1fr 1.1fr 0.4fr",
-                gap: "8px",
-                alignItems: "center",
-                marginBottom: "8px",
-              }}
-            >
+            <div key={item.id} className="invest-row">
               {/* 名目 Name */}
-              <input
-                type="text"
-                placeholder="例如: 台積電"
-                value={item.name}
-                onChange={(e) => updateInvestItem(item.id, "name", e.target.value)}
-                style={{
-                  width: "100%",
-                  padding: "6px",
-                  borderRadius: "6px",
-                  border: "1px solid #4b5563",
-                  background: "#1e293b",
-                  color: "#e5e7eb",
-                }}
-              />
+              <div className="invest-item-name">
+                <input
+                  type="text"
+                  placeholder="名目"
+                  value={item.name}
+                  onChange={(e) => updateInvestItem(item.id, "name", e.target.value)}
+                  style={{
+                    width: "100%",
+                    padding: "6px",
+                    borderRadius: "6px",
+                    border: "1px solid #4b5563",
+                    background: "#1e293b",
+                    color: "#e5e7eb",
+                  }}
+                />
+              </div>
 
               {/* 類型 Type (Give/Take) */}
-              <select
-                value={item.type}
-                onChange={(e) => updateInvestItem(item.id, "type", e.target.value)}
-                style={{
-                  width: "100%",
-                  padding: "6px",
-                  borderRadius: "6px",
-                  border: "1px solid #4b5563",
-                  background: item.type === 'out' ? "#1e293b" : "#3f2c2c",
-                  color: item.type === 'out' ? "#93c5fd" : "#fca5a5",
-                }}
-              >
-                <option value="out">投入 (Give)</option>
-                <option value="in">取回 (Take)</option>
-              </select>
+              <div className="invest-item-type">
+                <select
+                  value={item.type}
+                  onChange={(e) => updateInvestItem(item.id, "type", e.target.value)}
+                  style={{
+                    width: "100%",
+                    padding: "6px",
+                    borderRadius: "6px",
+                    border: "1px solid #4b5563",
+                    background: item.type === 'out' ? "#1e293b" : "#3f2c2c",
+                    color: item.type === 'out' ? "#93c5fd" : "#fca5a5",
+                  }}
+                >
+                  <option value="out">投入</option>
+                  <option value="in">取回</option>
+                </select>
+              </div>
 
-              {/* 金額 Amount - 改為 text 且顯示格式化後的數字 */}
-              <input
-                type="text"
-                inputMode="decimal" // 手機鍵盤優化
-                placeholder="金額"
-                value={formatNumber(item.amount)} // 顯示格式化後的逗號數字
-                onChange={(e) => handleAmountChange(item.id, e.target.value)}
-                style={{
-                  width: "100%",
-                  padding: "6px",
-                  borderRadius: "6px",
-                  border: "1px solid #4b5563",
-                  background: "#020617",
-                  color: "#e5e7eb",
-                  textAlign: "right" // 金額靠右對齊較易讀
-                }}
-              />
+              {/* 金額 Amount */}
+              <div className="invest-item-amount">
+                <input
+                  type="text"
+                  inputMode="decimal"
+                  placeholder="金額"
+                  value={formatNumber(item.amount)}
+                  onChange={(e) => handleAmountChange(item.id, e.target.value)}
+                  style={{
+                    width: "100%",
+                    padding: "6px",
+                    borderRadius: "6px",
+                    border: "1px solid #4b5563",
+                    background: "#020617",
+                    color: "#e5e7eb",
+                    textAlign: "right"
+                  }}
+                />
+              </div>
 
               {/* 日期 Date */}
-              <input
-                type="date"
-                value={item.date}
-                onChange={(e) => updateInvestItem(item.id, "date", e.target.value)}
-                style={{
-                  width: "100%",
-                  padding: "6px",
-                  borderRadius: "6px",
-                  border: "1px solid #4b5563",
-                  background: "#020617",
-                  color: "#e5e7eb",
-                }}
-              />
+              <div className="invest-item-date">
+                <input
+                  type="date"
+                  value={item.date}
+                  onChange={(e) => updateInvestItem(item.id, "date", e.target.value)}
+                  style={{
+                    width: "100%",
+                    padding: "6px",
+                    borderRadius: "6px",
+                    border: "1px solid #4b5563",
+                    background: "#020617",
+                    color: "#e5e7eb",
+                  }}
+                />
+              </div>
 
               {/* 刪除按鈕 */}
-              <button
-                type="button"
-                onClick={() => removeInvestItem(item.id)}
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: "6px",
-                  borderRadius: "6px",
-                  border: "1px solid #ef4444",
-                  background: "transparent",
-                  color: "#ef4444",
-                  cursor: "pointer",
-                }}
-                title="刪除"
-              >
-                ✕
-              </button>
+              <div className="invest-item-del" style={{ textAlign: "center" }}>
+                <button
+                  type="button"
+                  onClick={() => removeInvestItem(item.id)}
+                  style={{
+                    display: "inline-flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "32px",
+                    height: "32px",
+                    borderRadius: "50%",
+                    border: "1px solid #ef4444",
+                    background: "rgba(239, 68, 68, 0.1)",
+                    color: "#ef4444",
+                    cursor: "pointer",
+                    padding: 0,
+                  }}
+                  title="刪除"
+                >
+                  ✕
+                </button>
+              </div>
             </div>
           ))}
         </div>

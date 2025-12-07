@@ -40,3 +40,67 @@
 .read-the-docs {
   color: #888;
 }
+
+/* 投資紀錄列表的共用 Grid 設定 */
+.invest-header,
+.invest-row {
+  display: grid;
+  /* 電腦版預設比例：名目 | 類型 | 金額 | 日期 | 刪除 */
+  grid-template-columns: 1.5fr 0.9fr 1.2fr 1.1fr 0.4fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.invest-header {
+  margin-bottom: 4px;
+  padding-left: 4px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.invest-row {
+  margin-bottom: 8px;
+}
+
+/* 確保輸入框在 Grid 內充滿寬度 */
+.invest-row input,
+.invest-row select {
+  width: 100%;
+  box-sizing: border-box; /* 確保 padding 不會撐開寬度 */
+}
+
+/* === 手機版響應式設定 (螢幕寬度小於 600px) === */
+@media (max-width: 600px) {
+  /* 手機版隱藏表頭，節省空間 */
+  .invest-header {
+    display: none;
+  }
+
+  /* 手機版每一筆變成一個小區塊 */
+  .invest-row {
+    grid-template-columns: 1fr 1.5fr auto; /* 第二行的欄位比例：類型 | 金額 | 刪除 */
+    grid-template-rows: auto auto;         /* 分成兩行 */
+    grid-template-areas:
+      "name date date"     /* 第一行：名目佔 1 欄，日期佔 2 欄 */
+      "type amount del";   /* 第二行：類型 | 金額 | 刪除 */
+    
+    gap: 10px;             /* 增加間距比較好點 */
+    padding: 12px;
+    background-color: #1e293b; /* 深色背景卡片感 */
+    border: 1px solid #334155;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+
+  /* 指定各個元件對應的位置 */
+  .invest-item-name { grid-area: name; }
+  .invest-item-date { grid-area: date; }
+  .invest-item-type { grid-area: type; }
+  .invest-item-amount { grid-area: amount; }
+  .invest-item-del { grid-area: del; }
+
+  /* 手機版日期輸入框調整 */
+  .invest-item-date input {
+    text-align: right; /* 日期靠右顯示比較整齊 */
+  }
+}
