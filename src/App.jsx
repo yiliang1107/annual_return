@@ -488,7 +488,7 @@ function App() {
                 )}
                 
                 {years !== null && (
-                  <div>持有期間：約 {years.toFixed(2)} 年</div>
+                  <div>投資時間：約 {years.toFixed(2)} 年</div>
                 )}
               </div>
             </div>
