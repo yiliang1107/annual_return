@@ -473,7 +473,7 @@ function App() {
           {result !== null ? (
             <div>
               <div style={{ fontSize: "28px", fontWeight: "bold", color: "#4ade80", marginBottom: "8px" }}>
-                {formatPercent(result)} <span style={{ fontSize: "14px", color: "#86efac", fontWeight: "normal" }}>(XIRR)</span>
+                {formatPercent(result)}
               </div>
               
               <div style={{ fontSize: "13px", color: "#9ca3af", lineHeight: "1.6" }}>
