@@ -41,6 +41,28 @@
   color: #888;
 }
 
+/* === 新增主版面樣式 === */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 16px;
+}
+
+.app-card {
+  width: 100%;
+  max-width: 800px;
+  background: #020617;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6);
+  border: 1px solid #1f2937;
+}
+
 /* 投資紀錄列表的共用 Grid 設定 */
 .invest-header,
 .invest-row {
@@ -71,11 +93,27 @@
 
 /* === 手機版響應式設定 (螢幕寬度小於 600px) === */
 @media (max-width: 600px) {
-  /* 讓根容器 padding 變小，釋放更多寬度給內容 */
+  /* 移除 root 的 padding */
   #root {
-    padding: 0.5rem;
+    padding: 0;
     width: 100%;
-    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  /* 移除容器 padding，讓內容貼邊 */
+  .app-container {
+    padding: 0;
+    align-items: flex-start; /* 讓內容從頂部開始，避免垂直置中造成的留白 */
+  }
+
+  /* 卡片滿版設定 */
+  .app-card {
+    border-radius: 0; /* 移除圓角 */
+    border: none;     /* 移除邊框 */
+    box-shadow: none; /* 移除陰影 */
+    max-width: 100%;
+    padding: 12px;    /* 減少內部 padding */
+    min-height: 100vh; /* 確保背景色填滿整個螢幕 */
   }
 
   /* 手機版隱藏表頭，節省空間 */

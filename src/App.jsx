@@ -217,29 +217,8 @@ function App() {
   }
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "#0f172a",
-        color: "#e5e7eb",
-        fontFamily: 'system-ui, -apple-system, sans-serif',
-        padding: "16px",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "800px",
-          background: "#020617",
-          padding: "24px",
-          borderRadius: "16px",
-          boxShadow: "0 25px 50px -12px rgba(0,0,0,0.6)",
-          border: "1px solid #1f2937",
-        }}
-      >
+    <div className="app-container">
+      <div className="app-card">
         <h1 style={{ fontSize: "24px", marginBottom: "4px" }}>
           簡單年化報酬計算
         </h1>
