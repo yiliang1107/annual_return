@@ -490,7 +490,7 @@ function App() {
           </a>
           <span style={{ color: "#4b5563" }}>|</span>
           <a 
-            href="https://www.etfgoeays.com" 
+            href="https://www.etfgoeasy.com" 
             target="_blank" 
             rel="noreferrer" 
             style={{ color: "#38bdf8", textDecoration: "none", borderBottom: "1px dashed #38bdf8" }}
