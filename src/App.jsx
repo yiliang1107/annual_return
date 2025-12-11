@@ -489,6 +489,15 @@ function App() {
             保單分析
           </a>
           <span style={{ color: "#4b5563" }}>|</span>
+          <a 
+            href="https://www.etfgoeays.com" 
+            target="_blank" 
+            rel="noreferrer" 
+            style={{ color: "#38bdf8", textDecoration: "none", borderBottom: "1px dashed #38bdf8" }}
+          >
+            免費投資理財課
+          </a>
+          <span style={{ color: "#4b5563" }}>|</span>
           <span style={{ color: "#9ca3af", cursor: "default" }} title="影片製作中，敬請期待">
             使用說明 (即將上線)
           </span>
