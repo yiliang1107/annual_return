@@ -477,6 +477,22 @@ function App() {
             </p>
           )}
         </div>
+
+        {/* 外部連結區塊 */}
+        <div style={{ marginTop: "16px", display: "flex", gap: "12px", justifyContent: "center", fontSize: "13px" }}>
+          <a 
+            href="https://youtu.be/2ObGk681w54" 
+            target="_blank" 
+            rel="noreferrer" 
+            style={{ color: "#38bdf8", textDecoration: "none", borderBottom: "1px dashed #38bdf8" }}
+          >
+            保單分析
+          </a>
+          <span style={{ color: "#4b5563" }}>|</span>
+          <span style={{ color: "#9ca3af", cursor: "default" }} title="影片製作中，敬請期待">
+            使用說明 (即將上線)
+          </span>
+        </div>
       </div>
     </div>
   );
