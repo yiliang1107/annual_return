@@ -479,7 +479,7 @@ function App() {
         </div>
 
         {/* 外部連結區塊 */}
-        <div style={{ marginTop: "16px", display: "flex", gap: "12px", justifyContent: "center", fontSize: "13px" }}>
+        <div style={{ marginTop: "16px", display: "flex", gap: "12px", justifyContent: "center", fontSize: "13px", flexWrap: "wrap", alignItems: "center" }}>
           <a 
             href="https://youtu.be/2ObGk681w54" 
             target="_blank" 
@@ -506,6 +506,61 @@ function App() {
           >
             使用說明
           </a>
+          <span style={{ color: "#4b5563" }}>|</span>
+          <div style={{ display: "inline-flex", gap: "8px", alignItems: "center" }}>
+            <a
+              href="https://facebook.com/Little.Warung"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Little Warung Facebook"
+              title="Facebook"
+              style={{
+                width: "28px",
+                height: "28px",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "999px",
+                border: "1px solid #1f2937",
+                background: "#0b1220",
+                color: "#e5e7eb",
+                textDecoration: "none",
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M22 12.06C22 6.52 17.52 2 12 2S2 6.52 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.24 0-1.62.77-1.62 1.56v1.87h2.76l-.44 2.91h-2.32V22c4.78-.76 8.44-4.92 8.44-9.94z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/little.warung"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="little.warung Instagram"
+              title="Instagram"
+              style={{
+                width: "28px",
+                height: "28px",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "999px",
+                border: "1px solid #1f2937",
+                background: "#0b1220",
+                color: "#e5e7eb",
+                textDecoration: "none",
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm8.4 2H7.8A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
