@@ -498,9 +498,14 @@ function App() {
             免費投資理財課
           </a>
           <span style={{ color: "#4b5563" }}>|</span>
-          <span style={{ color: "#9ca3af", cursor: "default" }} title="影片製作中，敬請期待">
-            使用說明 (即將上線)
-          </span>
+          <a
+            href="https://youtu.be/c7uVfH89kC8"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "#38bdf8", textDecoration: "none", borderBottom: "1px dashed #38bdf8" }}
+          >
+            使用說明
+          </a>
         </div>
       </div>
     </div>
